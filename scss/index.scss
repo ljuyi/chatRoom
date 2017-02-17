@@ -1,0 +1,28 @@
+html{
+  font-size:20px;
+}
+section{
+  >div{
+    .ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio){
+      width:5rem;
+    }
+    height:16rem;
+    position:relative;
+    margin:9rem auto;
+    .qr-btn{
+      position:absolute;
+      top:8rem;
+      z-index:1;
+      opacity:0;
+    }
+    div.ui-btn-lg{
+      position:absolute;
+      top:8rem;
+    }
+    p{
+      font-size:0.8rem;
+      text-align:center;
+      line-height:5rem;
+    }
+  }
+}

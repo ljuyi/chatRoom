@@ -1,0 +1,61 @@
+html{
+  font-size:20px;
+}
+.ui-list{
+  height:70%;
+  background:transparent;
+  position:relative;
+  padding:0.5rem 0;
+  li{
+    margin-left:0.5rem;
+  }
+  p{
+    width:2.7rem;
+    position:absolute;
+    top:1rem;
+    font-size:0.6rem;
+    text-align:center;
+  }
+  h4.dialog{
+    position:absolute;
+    left:2.9rem;
+    top:0.5rem;
+    padding:0.5rem 0.8rem;
+    border:0.1rem #999 solid;
+    border-radius: 0.7rem;
+    background:#fff;
+    font-size:0.8rem;
+  }
+  h4.my-dialog{
+    position:absolute;
+    right:2.9rem;
+    top:0.5rem;
+    padding:0.5rem 0.8rem;
+    border:0.1rem transparent solid;
+    border-radius: 0.7rem;
+    background:limegreen;
+    font-size:0.8rem;
+    color:#fff;
+    &+p{
+      width:2.7rem;
+      position:absolute;
+      right:0.1rem;
+      top:1rem;
+      font-size:0.6rem;
+      text-align:center;
+    }
+  }
+  li.ui-border-t{
+    height:2rem;
+    border:none;
+  }
+}
+.ui-form{
+  width:100%;
+  bottom:0;
+  position:fixed;
+  textarea{
+    padding-left:10px;
+    resize: none;
+  }
+}

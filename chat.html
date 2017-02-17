@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--描述和关键词-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--width  ----  viewport的宽度（width=device-width意思是：宽度等于设备宽度）
+    initial-scale ----- 初始的缩放比例
+    minimum-scale ----- 允许用户缩放到的最小比例
+    maximum-scale ----- 允许用户缩放到的最大比例
+    user-scalable ----- 用户是否可以手动缩放-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--一般情况下，IOS和Android系统都会默认某长度内的数字为电话号码，即使不加也是会默认显示为电话的，因此，取消这个很有必要！-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--它表示：允许全屏模式浏览，隐藏浏览器导航栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--它指定的iphone中safari顶端的状态条的样式
+    默认值为default（白色），可以定为black（黑色）和black-translucent（
+    灰色半透明）-->
+    <title>Title</title>
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+<header class="ui-header ui-header-positive ui-border-b">
+    <i class="ui-icon-return" onclick="history.back()"></i><h1>欢迎来到聊天室<span id="roomNum"></span></h1><button class="ui-btn">回首页</button>
+</header>
+<section class="ui-container">
+    <section id="tab">
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-tab">
+                    <ul class="ui-tab-nav ui-border-b">
+                        <li class="current">聊天室</li>
+                        <li>全部成员</li>
+                    </ul>
+                    <ul class="ui-tab-content" style="width:300%">
+                        <li>
+                            <ul class="ui-list ui-list-pure">
+                            </ul>
+                        </li>
+                        <li>
+                            <section class="ui-selector">
+                                <header class="ui-border-b">
+                                    <h3>选择好友</h3>
+                                </header>
+                                <div class="ui-selector-content" style="display:block">
+                                    <ul>
+                                        <li class="ui-selector-item active">
+                                            <h3 class="ui-border-b">
+                                                <p>最近在玩的好友</p><span class="ui-txt-info">11</span>
+                                            </h3>
+                                            <ul class="ui-list ui-border-b">
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class=" ui-selector-item">
+                                            <h3 class="ui-border-b">
+                                                <p>最近在玩的好友</p><span class="ui-txt-info">11</span>
+                                            </h3>
+                                            <ul class="ui-list ui-border-b">
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class=" ui-selector-item">
+                                            <h3 class="ui-border-b"><i class="arrow"></i>
+                                                <p>最近在玩的好友</p><span class="ui-txt-info">11</span>
+                                            </h3>
+                                            <ul class="ui-list ui-border-b">
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ui-avatar-s">
+                                                        <span style=""></span>
+                                                    </div>
+                                                    <div class="ui-list-info ui-border-t"><h4>飞翔的企鹅</h4></div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<footer class="ui-footer ui-footer-btn">
+    <div class="ui-form ui-border-t">
+        <form action="post">
+            <div class="ui-form-item ui-form-item-textarea ui-border-b">
+                <textarea id="message" placeholder="我想说..."></textarea>
+            </div>
+        </form>
+    </div>
+</footer>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/frozen.js"></script>
+<script src="js/chat.js"></script>
+<script>
+    (function (){
+        var tab = new fz.Scroll('.ui-tab', {
+            role: 'tab',
+            autoplay: false,
+            interval: 3000
+        });
+        /* 滑动开始前 */
+        tab.on('beforeScrollStart', function(fromIndex, toIndex) {
+            console.log(fromIndex,toIndex);// from 为当前页，to 为下一页
+        })
+    })();
+</script>
+</body>
+</html>

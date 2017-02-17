@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--描述和关键词-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--width  ----  viewport的宽度（width=device-width意思是：宽度等于设备宽度）
+    initial-scale ----- 初始的缩放比例
+    minimum-scale ----- 允许用户缩放到的最小比例
+    maximum-scale ----- 允许用户缩放到的最大比例
+    user-scalable ----- 用户是否可以手动缩放-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--一般情况下，IOS和Android系统都会默认某长度内的数字为电话号码，即使不加也是会默认显示为电话的，因此，取消这个很有必要！-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--它表示：允许全屏模式浏览，隐藏浏览器导航栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--它指定的iphone中safari顶端的状态条的样式
+    默认值为default（白色），可以定为black（黑色）和black-translucent（
+    灰色半透明）-->
+    <title>Title</title>
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header class="ui-header ui-header-positive ui-border-b">
+    <i class="ui-icon-return" onclick="history.back()"></i><h1>欢迎来到聊天室</h1><button class="ui-btn">回首页</button>
+</header>
+<section class="ui-container">
+    <div>
+        <div class="ui-form ui-border-t">
+            <form action="#">
+                <div class="ui-form-item ui-border-b">
+                    <label>
+                        起个名字吧：
+                    </label>
+                    <input type="text" id="name" placeholder="我叫...">
+                    <a href="#" class="ui-icon-close">
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div>
+            <p>点我扫一扫，进入聊天室！</p>
+            <div class="ui-btn-lg qr-btn" node-type="qr-btn">
+                <input node-type="jsbridge" type="file" name="myPhoto" accept="image/*" capture="camera"/>
+            </div>
+            <div class="ui-btn-lg ui-btn-primary">扫一扫</div>
+        </div>
+    </div>
+</section>
+<footer class="ui-footer ui-footer-btn">
+</footer>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/frozen.js"></script>
+<script src="js/qrcode.lib.min.js"></script>
+<script src="js/qrcode.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
