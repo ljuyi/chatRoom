@@ -12,12 +12,17 @@ function fontSelf() {
     wHtml.style.fontSize = w * 0.045 + 'px';
 }
 (function(){
-    var roomNum = localStorage.getItem('name'); //'wenzhixin'
+    var roomNum =  localStorage.getItem('roomid'); //获取房间号
+    var name = localStorage.getItem('name');
+    var socket = io.connect('http://localhost:4000?roomNum=' + roomNum + '&name=' + name);   //建立连接请求，并发送房间号到服务器端
+
+
     $('#roomNum').html('('+roomNum+')');
-    var socket = io.connect('http://localhost:4000');
+
+    /*按下回车键发送消息*/
     $('#message').on('keypress', function(event){
         if(event.keyCode == 13){
-            socket.emit('chatMessage', {'room':roomNum,'name': 'a','mes': $('#message').val()});
+            socket.emit('chatMessage', {'room':roomNum,'name':name ,'mes': $('#message').val()});
             $('#message').val('');
         }
     })

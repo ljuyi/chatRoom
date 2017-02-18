@@ -58,8 +58,9 @@
 
                 qrcode.decode(oFREvent.target.result);
                 qrcode.callback = function(data) {
-                    localStorage.setItem('name', data);
-                    var name = $('#name').val() || '匿名'
+                    var name = $('#name').val() || '';
+                    localStorage.setItem('roomid', data);
+                    localStorage.setItem('name', name);
                     //得到扫码的结果
                     $.ajax({
                         method:'get',

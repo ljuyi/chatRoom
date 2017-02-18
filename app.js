@@ -4,7 +4,7 @@ var io = require('socket.io')(http);
 
 http.listen(4000);
 
-var roomNum = [], _thisNum, lock = 0;
+var roomNum = [];
 
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -16,24 +16,22 @@ app.all('*', function(req, res, next) {
     })
     .all('/room', function(req, res){
     var thisNum = req.url.slice(6).split(',');
+
+    //获取房间号
     roomNum.push(thisNum[0]);
-    if(lock == 0){
-        lock = 1;
-        _thisNum = thisNum[0];
-        res.send(null);
-    }else{}
+    res.send(null);
     })
 
 
 io.on('connection', function (socket) {
-    console.log('a user connected');
-    if(lock == 1){
-        socket.broadcast.emit('newFriend', {'room':_thisNum,'name':'机器人','mes':'有新朋友来啦！'});
-        lock = 0;
-    }
+    console.log(socket.request.connection.remoteAddress + ' user connected'); // 获取客户端ip
+
+    /*机器人广播*/
+    socket.broadcast.emit('newFriend', {'room':socket.handshake.query.roomNum,'name':'机器人','mes':'有新朋友来啦！'});
+
+    /*聊天消息广播*/
     socket.on('chatMessage', function (data) {
         socket.broadcast.emit('chatMessage', {'room':data.room,'name': data.name,'mes': data.mes});
         socket.emit('myMessage', {'room':data.room,'name':data.name,'mes':data.mes});
     });
 });
-io.emit('some event', { for: 'everyone'});
