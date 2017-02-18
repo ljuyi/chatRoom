@@ -26,51 +26,41 @@
 <header class="ui-header ui-header-positive ui-border-b">
     <i class="ui-icon-return" onclick="history.back()"></i><h1>欢迎来到聊天室<span id="roomNum"></span></h1><button class="ui-btn">回首页</button>
 </header>
-<section class="ui-container">
-    <section id="tab">
+<section class="container">
+    <section id="list">
         <div class="demo-item">
             <div class="demo-block">
-                <div class="ui-tab">
-                    <ul class="ui-tab-nav ui-border-b">
-                        <li class="current">聊天室</li>
-                    </ul>
-                    <ul class="ui-tab-content" style="width:300%">
-                        <li>
-                            <ul class="ui-list ui-list-pure">
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="ui-list ui-list-pure">
+                </ul>
             </div>
         </div>
     </section>
 </section>
 <footer class="ui-footer ui-footer-btn">
-    <div class="ui-form ui-border-t">
-        <form action="post">
-            <div class="ui-form-item ui-form-item-textarea ui-border-b">
-                <textarea id="message" placeholder="我想说..."></textarea>
-            </div>
-        </form>
-    </div>
+    <section class="ui-input-wrap ui-border-t">
+        <div class="ui-input ui-border-radius">
+            <input id="message" type="text" name="" value="" placeholder="我也说一句...">
+        </div>
+        <button class="ui-btn" id="postMessage">发送</button>
+    </section>
 </footer>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script src="js/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
 <script src="js/chat.js"></script>
-<script>
+<script>/*
     (function (){
         var tab = new fz.Scroll('.ui-tab', {
             role: 'tab',
             autoplay: false,
             interval: 3000
         });
-        /* 滑动开始前 */
+        /!* 滑动开始前 *!/
         tab.on('beforeScrollStart', function(fromIndex, toIndex) {
             console.log(fromIndex,toIndex);// from 为当前页，to 为下一页
         })
-    })();
+    })();*/
 </script>
 </body>
 </html>

@@ -1,11 +1,18 @@
 html{
   font-size:20px;
 }
+.ui-header{
+  height:2.5rem;
+}
+section.container{
+  position:relative;
+  top:2.5rem;
+}
 .ui-list{
-  height:70%;
+  overflow: auto;
   background:transparent;
   position:relative;
-  padding:0.5rem 0;
+  padding:0.5rem 0 0 0;
   li{
     margin-left:0.5rem;
     height:2.5rem;
