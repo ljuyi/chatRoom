@@ -16,6 +16,17 @@ section.container{
   li{
     margin-left:0.5rem;
     height:2.5rem;
+    p.robot{
+      font-size:0.6rem;
+      width:5rem;
+      line-height:0.9rem;
+      background:#999;
+      color:#fff;
+      position:absolute;
+      left:50%;
+      margin-left:-2.5rem;
+      border-radius: 0.45rem;
+    }
   }
   p{
     width:2.7rem;

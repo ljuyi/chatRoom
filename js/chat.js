@@ -18,18 +18,27 @@ function fontSelf() {
 
 
     $('.ui-list').css({'height':document.documentElement.clientHeight - $('.ui-header').height() - $('footer').height()});
+
     function postMes(){
         socket.emit('chatMessage', {'room':roomNum,'name':name ,'mes': $('#message').val()});
         $('#message').val('');
     }
 
-    function emitMes(data, cName){
+    /*向页面中插入聊天内容或提示消息*/
+    function emitMes(data, cName,obj){
         if(data.room == roomNum){
-            $('.ui-list').append('<li><h4 class="' + cName + '">'+data.mes+'</h4><p>'+data.name+'</p></li>');
+            switch(cName){
+                case 'robot':
+                    obj.append('<li><p class="' + cName + '">' + data.mes + '</p></li>');
+                    break;
+                default:
+                    obj.append('<li><h4 class="' + cName + '">'+data.mes+'</h4><p>'+data.name+'</p></li>');
+            }
         }
     }
-    function updataScroll(){
-        $('.ui-list').scrollTop($('.ui-list')[0].scrollHeight);
+
+    function updataScroll(obj){
+        obj.scrollTop(obj[0].scrollHeight);
     }
 
 
@@ -47,16 +56,20 @@ function fontSelf() {
     })
 
     socket.on('chatMessage', function(data){
-        emitMes(data, 'dialog');
-        updataScroll();
+        emitMes(data, 'dialog',$('.ui-list'));
+        updataScroll($('.ui-list'));
 
     })
     socket.on('newFriend', function(data){
-        emitMes(data, 'dialog');
-        updataScroll();
+        emitMes(data, 'robot',$('.ui-list'));
+        updataScroll($('.ui-list'));
     })
     socket.on('myMessage', function(data){
-        emitMes(data, 'my-dialog');
-        updataScroll();
+        emitMes(data, 'my-dialog',$('.ui-list'));
+        updataScroll($('.ui-list'));
+    })
+    socket.on('leaveFriend', function(data){
+        emitMes(data,'robot',$('.ui-list'));
+        updataScroll($('.ui-list'));
     })
 })();

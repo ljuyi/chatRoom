@@ -1,4 +1,4 @@
-## websocket聊天室
+﻿## websocket聊天室
 
 #### [demo示例](http://htmlpreview.github.io/?https://github.com/ljuyi/websocket-/blob/master/chat.html)
 
@@ -16,5 +16,8 @@
 
 2017-02-18:
 机器人提醒功能改进，用户聊天昵称显示，进入聊天室页面的完善，添加自动滚动到底部的功能 <br/>
+
+2017-02-19:
+提醒功能改进，进出房间提醒 <br/>
 
 
